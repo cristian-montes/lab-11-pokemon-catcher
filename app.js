@@ -1,8 +1,16 @@
 // import functions and grab DOM elements
 
-// initialize state
+const pokemon1Radio = document.getElementById('pokemon1-radio');
+const pokemon1Image = document.getElementById('pokemon1-img');
 
-// set event listeners 
-  // get user input
-  // use user input to update state 
-  // update DOM to reflect the new state
+const pokemon2Radio = document.getElementById('pokemon2-radio');
+const pokemon2Image = document.getElementById('pokemon2-img');
+
+const pokemon3Radio = document.getElementById('pokemon3-radio');
+const pokemon3Image = document.getElementById('pokemon3-img');
+
+
+
+// INITIALIZE STATE
+let totalPlays = 0;
+
