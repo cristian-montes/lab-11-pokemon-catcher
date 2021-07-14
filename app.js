@@ -1,6 +1,6 @@
 // import functions and grab DOM elements
 import pokemonInfo from './data/pokemonData.js';
-import { encounterPokemon, capturePokemon } from './storage-utils.js';
+import { encounterPokemon } from './storage-utils.js';
 
 const pokemon1Radio = document.getElementById('pokemon1-radio');
 const pokemon1Image = document.getElementById('pokemon1-img');
@@ -55,19 +55,15 @@ function renderRandomPokemon(){
     encounterPokemon(poke2.id);
     encounterPokemon(poke3.id);
 
-    // capturePokemon(poke1.id);
-    // capturePokemon(poke2.id);
-    // capturePokemon(poke3.id);
-    
   
 }
-
+localStorage.removeItem('RESULTS');
 renderRandomPokemon();
 
 
 // EVENT LISTENER CATCHBTN
 catchBtn.addEventListener('click', () => {
-    if (totalPlays < 10) {
+    if (totalPlays < 3) {
         renderRandomPokemon();
     } else {
         window.location.replace('./results'); // we creating this tomorrow ???

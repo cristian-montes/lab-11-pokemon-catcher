@@ -15,11 +15,10 @@ function findById(items, id){
 // ENCOUNTERPOKEMON FUNCTION
 export function encounterPokemon(id){
 
-    const resultsString = localStorage.getItem('RESULTS') || '[]';
-    const results = JSON.parse(resultsString);
+    const results = getPokedex();
     const pokemon = findById(results, id);
 
-// if not matching object create one
+    // if not matching object create one
     if (!pokemon){
         const newItem = {
             id: id,
@@ -32,29 +31,26 @@ export function encounterPokemon(id){
         pokemon.shown++;
     }
 
-    localStorage.setItem('RESULTS', JSON.stringify(results));
-
+    setPokedex(results);
 }
 
 // CAPTUREPOKEMON FUNCTION
+export function capturedPokemon(id){
+    const result = getPokedex();
+    const pokemon = findById(result, id);
+    pokemon.prefered++;
+    setPokedex(result);
+}
 
-export function capturePokemon(id){
-    const resultsString = localStorage.getItem('RESULTS') || '[]';
-    const results = JSON.parse(resultsString);
-    const pokemon = findById(results, id);
+// GET POKEDEX RESULTS  OR GET RESULTS FUNCTION
+export function getPokedex(){
+    const stringRusults = localStorage.getItem('RESULTS') || '[]';
+    const results = JSON.parse(stringRusults);
+    return results;
+}
 
-    if (!pokemon){
-        const newItem = {
-            id: id,
-            shown: 0,
-            prefered: 1
-        };
-        results.push(newItem);
-        //else update the shown key
-    } else {
-        pokemon.prefered++;
-    }
-
-    localStorage.setItem('RESULTS', JSON.stringify(results));
-
+// SET POKEDEX RESULTS OR SET RESULTS FUNCTION
+export function setPokedex(resultArray){
+    const setDex = localStorage.setItem('RESULTS', JSON.stringify(resultArray));
+    return setDex;
 }
