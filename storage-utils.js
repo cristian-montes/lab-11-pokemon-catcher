@@ -54,3 +54,8 @@ export function setPokedex(resultArray){
     const setDex = localStorage.setItem('RESULTS', JSON.stringify(resultArray));
     return setDex;
 }
+
+export function wholeResults(arr){
+    const results = arr.reduce((a, b) => a + b, 0);
+    return results;
+}

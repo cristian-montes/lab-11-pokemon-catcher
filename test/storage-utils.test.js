@@ -1,6 +1,6 @@
 // IMPORT MODULES under test here:
 // import { example } from '../example.js';
-import { encounterPokemon, getPokedex, setPokedex, capturedPokemon } from '../storage-utils.js';
+import { encounterPokemon, getPokedex, setPokedex, capturedPokemon, wholeResults } from '../storage-utils.js';
 const test = QUnit.test;
 
 test('showPokemon should create a results object if POKEMON not previously shown', (expect) => {
@@ -139,6 +139,20 @@ test('CAPTUREPOKEMON should  increment the preffered if POKEMON chose by user', 
         shown: 1,
         prefered: 1
     }];
+
+    //Expect
+    // Make assertions about what is expected versus the actual result
+    expect.deepEqual(results, expected);
+});
+
+test('WHOLERESULTS should whoe the whole number of shown and caught', (expect) => {
+    //Arrange
+    // Set up your arguments and expectations
+
+    const testResults = [1, 2, 3, 4, 5];
+    const results = wholeResults(testResults);
+    
+    const expected = 15;
 
     //Expect
     // Make assertions about what is expected versus the actual result
