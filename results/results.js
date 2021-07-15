@@ -1,8 +1,9 @@
 import pokemonInfo from '../data/pokemonData.js';
-import { getPokedex, findById } from '../storage-utils.js';
+import { getPokedex, findById, wholeResults } from '../storage-utils.js';
 
 const secTion = document.getElementById('main-section');
 const playAgainBtn = document.getElementById('play-again-btn');
+const bigDiv = document.getElementById('big-div');
 
 //EMPTY [] TO STORE DATA FROM BELOW LOOP
 let shown = [];
@@ -40,6 +41,10 @@ for (let item of pokeData){
 
     secTion.appendChild(div1);
 }
+
+
+
+
 
 //CREATE GRAPH  FOR RESULTS
 let ctx = document.getElementById('myChart').getContext('2d');
@@ -80,3 +85,16 @@ playAgainBtn.addEventListener('click', () => {
     localStorage.removeItem('RESULTS'); 
     window.location.replace('../index.html');
 });
+
+// const wholeShown = shown.reduce((a, b) => a + b, 0);
+// // const wholePrefered = prefered.reduce((a, b) => a + b, 0);
+
+const wholeResultShown = document.createElement('p');
+const wholeResultPrefered = document.createElement('p');
+
+wholeResultShown.textContent = `Total Whole Shown ${wholeResults(shown)}`;
+wholeResultPrefered.textContent = ` Total Whole Caught ${wholeResults(prefered)}`;
+
+
+bigDiv.appendChild(wholeResultShown);
+bigDiv.appendChild(wholeResultPrefered);

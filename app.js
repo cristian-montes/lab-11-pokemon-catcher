@@ -55,10 +55,48 @@ function renderRandomPokemon(){
     encounterPokemon(poke2.id);
     encounterPokemon(poke3.id);
 
+
 }
+
+
 
 localStorage.removeItem('RESULTS');
 renderRandomPokemon();
+
+
+// const pokeData = getPokedex();
+// function attachedInfo(pokeData, pokemonInfo, id){
+//     for (let item of pokeData){
+
+//         const pokemonPicked = findById(pokemonInfo, item.id);
+//     // shown.push(item.shown);
+//     // prefered.push(item.prefered);
+//     // names.push(pokemonPicked.pokemon);
+
+//         const div1 = document.createElement('div');
+//         div1.classList.add('result');
+
+//     // const pokeImage = document.createElement('img');
+//     // pokeImage.src = pokemonPicked.url_image;
+//     // div1.appendChild(pokeImage);
+
+//         const shownPrg = document.createElement('p');
+//         shownPrg.textContent = `Appeared ${item.shown}`;
+//         div1.appendChild(shownPrg);
+
+//         const preferedPrg = document.createElement('p');
+//         preferedPrg.textContent = `Caught ${item.prefered}`;
+//         div1.appendChild(preferedPrg);
+
+//         const namePrg = document.createElement('p');
+//         namePrg.textContent = pokemonPicked.pokemon;
+//         div1.appendChild(namePrg);
+
+//         pokemon1Image.appendChild(div1);
+//         pokemon2Image.appendChild(div1);
+//         pokemon3Image.appendChild(div1);
+//     }
+// }
 
 
 // EVENT LISTENER CATCHBTN
