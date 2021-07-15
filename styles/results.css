@@ -1,0 +1,24 @@
+.result {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+img {
+    width: 50px;
+    height: 60px;
+}
+
+p {
+    font-family: 'Press Start 2P', cursive;
+    text-transform: uppercase;
+    color: #FFA12B;
+}
+
+h1 {
+    font-family: 'Press Start 2P', cursive;
+    text-transform: uppercase;
+    color: #ff8a2bec;
+    font-size: 30px;
+    margin-top: 25px;
+}
