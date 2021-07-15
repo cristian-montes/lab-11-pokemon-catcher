@@ -55,13 +55,9 @@ function renderRandomPokemon(){
     encounterPokemon(poke2.id);
     encounterPokemon(poke3.id);
 
-    // capturedPokemon(poke1.id);
-    // capturedPokemon(poke2.id);
-    // capturedPokemon(poke3.id);
-
-  
 }
-localStorage.removeItem('RESULTS'); // FACTORIZE TO A FUNCTION.
+
+localStorage.removeItem('RESULTS');
 renderRandomPokemon();
 
 
