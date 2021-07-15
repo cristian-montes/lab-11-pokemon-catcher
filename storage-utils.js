@@ -1,6 +1,6 @@
 
 // FIND BY ID FUNCTION
-function findById(items, id){
+export function findById(items, id){
     // loop through the items
     // if item's id is equal to the id parameter
     //   return the item

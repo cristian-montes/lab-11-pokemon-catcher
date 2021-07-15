@@ -1,6 +1,6 @@
 // import functions and grab DOM elements
 import pokemonInfo from './data/pokemonData.js';
-import { encounterPokemon } from './storage-utils.js';
+import { encounterPokemon, capturedPokemon } from './storage-utils.js';
 
 const pokemon1Radio = document.getElementById('pokemon1-radio');
 const pokemon1Image = document.getElementById('pokemon1-img');
@@ -55,18 +55,25 @@ function renderRandomPokemon(){
     encounterPokemon(poke2.id);
     encounterPokemon(poke3.id);
 
+    // capturedPokemon(poke1.id);
+    // capturedPokemon(poke2.id);
+    // capturedPokemon(poke3.id);
+
   
 }
-localStorage.removeItem('RESULTS');
+localStorage.removeItem('RESULTS'); // FACTORIZE TO A FUNCTION.
 renderRandomPokemon();
 
 
 // EVENT LISTENER CATCHBTN
 catchBtn.addEventListener('click', () => {
-    if (totalPlays < 3) {
+    const prefered = document.querySelector('input[type=radio]:checked');
+    const preferedId = Number(prefered.value);
+    capturedPokemon(preferedId);
+    if (totalPlays < 10) {
         renderRandomPokemon();
     } else {
-        window.location.replace('./results'); // we creating this tomorrow ???
+        window.location.replace('./results');
     }
 });
 

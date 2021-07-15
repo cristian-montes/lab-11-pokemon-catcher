@@ -1,0 +1,10 @@
+.result {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+img {
+    width: 200px;
+    height: 220px;
+}
